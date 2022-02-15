@@ -96,6 +96,12 @@ WHERE escape_attempts = (
 )
 
 -- What is the minimum and maximum weight of each type of animal?
+SELECT 
+	species,
+	MIN(weight_kg) Minimum_weight,
+	MAX(weight_kg) Maximum_weight
+FROM animals
+GROUP BY species
 
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 
