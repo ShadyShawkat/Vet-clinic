@@ -36,3 +36,12 @@ SELECT *
 FROM animals
 WHERE weight_kg
 BETWEEN 10.4 AND 17.3
+
+-- A transaction update the animals table by setting the species column to unspecified. Then roll back the change.
+
+BEGIN;
+
+UPDATE animals
+SET species = 'unspecified';
+
+ROLLBACK;
