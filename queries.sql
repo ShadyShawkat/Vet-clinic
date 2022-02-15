@@ -59,3 +59,11 @@ SET species = 'pokemon'
 WHERE name NOT LIKE '%mon';
 
 COMMIT;
+
+-- A transaction that deletes all records. Then roll back the change.
+
+BEGIN;
+
+DELETE FROM animals;
+
+ROLLBACK;
