@@ -63,7 +63,21 @@ COMMIT;
 -- A transaction that deletes all records. Then roll back the change.
 
 BEGIN;
-
-DELETE FROM animals;
-
+  DELETE FROM animals;
 ROLLBACK;
+
+-- A transaction that updates weigths to be positive
+
+BEGIN;
+	DELETE FROM animals
+	WHERE date_of_birth > '2022-01-01';
+	SAVEPOINT delete_save_point;
+	
+	UPDATE animals
+	SET weight_kg = weight_kg * -1;
+	ROLLBACK TO delete_save_point;
+	
+	UPDATE animals
+	SET weight_kg = weight_kg * -1
+	WHERE weight_kg < 0;
+COMMIT;
