@@ -88,6 +88,12 @@ SELECT CONCAT(AVG(weight_kg), ' kg') AS "Average weight of animals"
 FROM animals
 
 -- Who escapes the most, neutered or not neutered animals?
+SELECT *
+FROM animals
+WHERE escape_attempts = (
+  SELECT MAX(escape_attempts)
+  FROM animals
+)
 
 -- What is the minimum and maximum weight of each type of animal?
 
