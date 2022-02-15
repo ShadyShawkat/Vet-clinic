@@ -40,24 +40,20 @@ BETWEEN 10.4 AND 17.3
 -- A transaction update the animals table by setting the species column to unspecified. Then roll back the change.
 
 BEGIN;
-
-UPDATE animals
-SET species = 'unspecified';
-
+  UPDATE animals
+  SET species = 'unspecified';
 ROLLBACK;
 
 -- A transaction that updates animals species according to their names.
 
 BEGIN;
+  UPDATE animals
+  SET species = 'digimon'
+  WHERE name LIKE '%mon';
 
-UPDATE animals
-SET species = 'digimon'
-WHERE name LIKE '%mon';
-
-UPDATE animals
-SET species = 'pokemon'
-WHERE name NOT LIKE '%mon';
-
+  UPDATE animals
+  SET species = 'pokemon'
+  WHERE name NOT LIKE '%mon';
 COMMIT;
 
 -- A transaction that deletes all records. Then roll back the change.
