@@ -12,4 +12,5 @@ VALUES
   (5, 'Charmander', '2020-02-08', 0, false, -11),
 	(6, 'Plantmon', '2022-11-15', 2, true, -5.7),
 	(7, 'Squirtle', '1993-04-02', 3, false, -12.13),
-  (8, 'Angemon', '2005-06-12', 1, true, -45)
+  (8, 'Angemon', '2005-06-12', 1, true, -45),
+  (9, 'Boarmon', '2005-06-07', 7, true, 20.4)
