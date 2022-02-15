@@ -45,3 +45,17 @@ UPDATE animals
 SET species = 'unspecified';
 
 ROLLBACK;
+
+-- A transaction that updates animals species according to their names.
+
+BEGIN;
+
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';
+
+UPDATE animals
+SET species = 'pokemon'
+WHERE name NOT LIKE '%mon';
+
+COMMIT;
