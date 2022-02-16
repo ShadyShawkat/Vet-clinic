@@ -29,3 +29,7 @@ CREATE TABLE species (
 ALTER TABLE animals
 ADD PRIMARY KEY (id),
 ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
+
+-- Remove column species
+ALTER TABLE animals
+DROP COLUMN species
