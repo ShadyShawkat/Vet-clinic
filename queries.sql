@@ -111,13 +111,19 @@ BETWEEN '1990' AND '2000'
 GROUP BY species
 
 -- What animals belong to Melody Pond?
-SELECT *
+SELECT animals.name
 FROM animals
 INNER JOIN owners
 ON owners.id = animals.owner_id
 WHERE owners.full_name = 'Melody Pond'
 
 -- List of all animals that are pokemon (their type is Pokemon).
+SELECT animals.name
+FROM animals
+INNER JOIN species
+ON species.id = animals.species_id
+WHERE species.name = 'Pokemon'
+
 -- List all owners and their animals, remember to include those that don't own any animal.
 -- How many animals are there per species?
 -- List all Digimon owned by Jennifer Orwell.
