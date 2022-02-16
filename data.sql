@@ -15,3 +15,11 @@ VALUES
   (8, 'Angemon', '2005-06-12', 1, true, -45),
   (9, 'Boarmon', '2005-06-07', 7, true, 20.4),
   (10, 'Blossom', '1998-08-13', 3, true, 17)
+
+-- Insert data into owners table
+INSERT INTO owners (full_name, age)  
+  VALUES 
+      ('Sam Smith', 34),
+      ('Jennifer Orwell', 19),
+      ('Bob', 45),
+      ('Melody Pond', 77),

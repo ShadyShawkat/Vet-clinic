@@ -43,11 +43,3 @@ ALTER TABLE animals
 ALTER TABLE animals
 	ADD COLUMN owner_id INT,
 	ADD CONSTRAINT fk_animals_owners FOREIGN KEY (owner_id) REFERENCES owners (id)
-
--- Insert data into owners table
-INSERT INTO owners (full_name, age)  
-    VALUES 
-        ('Sam Smith', 34),
-        ('Jennifer Orwell', 19),
-        ('Bob', 45),
-        ('Melody Pond', 77),
