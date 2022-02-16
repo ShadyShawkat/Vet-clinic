@@ -131,6 +131,12 @@ LEFT JOIN animals
 ON owners.id = animals.owner_id
 
 -- How many animals are there per species?
+SELECT species.name, count(animals)
+FROM animals
+INNER JOIN species
+ON species.id = animals.species_id
+GROUP BY species.name
+
 -- List all Digimon owned by Jennifer Orwell.
 -- List all animals owned by Dean Winchester that haven't tried to escape.
 -- Who owns the most animals?
