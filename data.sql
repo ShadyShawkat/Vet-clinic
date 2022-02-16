@@ -31,3 +31,12 @@ INSERT INTO species (name)
   VALUES 
     ('Pokemon'),
     ('Digimon');
+
+-- Modify animals so it includes the species_id value:
+UPDATE animals
+  SET species_id = 2
+  WHERE name LIKE '%mon';
+
+UPDATE animals
+  SET species_id = 1
+  WHERE name NOT LIKE '%mon';
