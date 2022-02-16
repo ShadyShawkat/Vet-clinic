@@ -43,5 +43,9 @@ UPDATE animals
 
 -- Modify animals to include owner information (owner_id)
 UPDATE animals
-  SET owners_id = 1
+  SET owner_id = 1
   WHERE name = 'Agumon';
+
+UPDATE animals
+  SET owner_id = 2
+  WHERE name in ('Gabumon', 'Pikachu');
