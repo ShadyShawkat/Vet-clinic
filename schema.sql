@@ -1,28 +1,28 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
-    id int,
-    name varchar(20),
-    date_of_birth date,
-	escape_attempts int,
-	neutered bool,
-	weight_kg decimal
+    id INT,
+    name VARCHAR(20),
+    date_of_birth DATE,
+	escape_attempts INT,
+	neutered BOOLEAN,
+	weight_kg DECIMAL
 );
 
 ALTER TABLE animals
-    ADD COLUMN species varchar(20);
+    ADD COLUMN species VARCHAR(20);
 
 -- Create owners table
 CREATE TABLE owners (
-    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    full_name varchar(255),
-    age int
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(255),
+    age INT
 );
 
 -- Create species tables
 CREATE TABLE species (
-    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name varchar(255)
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(255)
 );
 
 -- Alter column id in animals table to be auto incremented and primary key
@@ -33,3 +33,9 @@ ALTER TABLE animals
 -- Remove column species
 ALTER TABLE animals
     DROP COLUMN species
+
+-- Add column species_id which is a foreign key referencing species table
+ALTER TABLE animals
+	ADD COLUMN species_id INT,
+	ADD CONSTRAINT fk_animals_species FOREIGN KEY (species_id) REFERENCES species (id)
+
