@@ -24,3 +24,8 @@ CREATE TABLE species (
     id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name varchar(255)
 );
+
+-- Alter column id in animals table to be auto incremented and primary key
+ALTER TABLE animals
+ADD PRIMARY KEY (id),
+ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
