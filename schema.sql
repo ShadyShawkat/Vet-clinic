@@ -46,5 +46,6 @@ ALTER TABLE animals
 
 -- Insert data into owners table
 INSERT INTO owners (full_name, age)  
-VALUES 
-	('Sam Smith', 34),
+    VALUES 
+        ('Sam Smith', 34),
+        ('Jennifer Orwell', 19),
