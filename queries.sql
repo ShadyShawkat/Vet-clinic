@@ -125,6 +125,11 @@ ON species.id = animals.species_id
 WHERE species.name = 'Pokemon'
 
 -- List all owners and their animals, remember to include those that don't own any animal.
+SELECT owners.full_name, animals.name
+FROM owners
+LEFT JOIN animals
+ON owners.id = animals.owner_id
+
 -- How many animals are there per species?
 -- List all Digimon owned by Jennifer Orwell.
 -- List all animals owned by Dean Winchester that haven't tried to escape.
