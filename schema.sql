@@ -10,7 +10,7 @@ CREATE TABLE animals (
 );
 
 ALTER TABLE animals
-ADD COLUMN species varchar(20);
+    ADD COLUMN species varchar(20);
 
 -- Create owners table
 CREATE TABLE owners (
@@ -27,9 +27,9 @@ CREATE TABLE species (
 
 -- Alter column id in animals table to be auto incremented and primary key
 ALTER TABLE animals
-ADD PRIMARY KEY (id),
-ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
+    ADD PRIMARY KEY (id),
+    ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
 
 -- Remove column species
 ALTER TABLE animals
-DROP COLUMN species
+    DROP COLUMN species
