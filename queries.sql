@@ -214,6 +214,16 @@ ORDER BY COUNT(visits) DESC
 LIMIT 1
 
 -- Who was Maisy Smith's first visit?
+SELECT animals.name, visits.date_of_visit, vets.name
+FROM animals
+INNER JOIN visits
+ON visits.animal_id = animals.id
+INNER JOIN vets
+ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith'
+ORDER BY visits.date_of_visit
+LIMIT 1
+
 -- Details for most recent visit: animal information, vet information, and date of visit.
 -- How many visits were with a vet that did not specialize in that animal's species?
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
