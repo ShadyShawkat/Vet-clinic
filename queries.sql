@@ -247,3 +247,15 @@ WHERE species.name IS NULL
 GROUP BY vets.name
 
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
+SELECT vets.name, species.name, COUNT(species.name)
+FROM vets
+INNER JOIN visits
+ON visits.vet_id = vets.id
+INNER JOIN animals
+ON visits.animal_id = animals.id
+INNER JOIN species
+ON animals.species_id = species.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name, vets.name
+ORDER BY COUNT(species.name) DESC
+LIMIT 1
