@@ -60,3 +60,12 @@ CREATE TABLE specializations (
 	FOREIGN KEY (vet_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
 	PRIMARY KEY (species_id, vet_id)
 );
+
+-- Create a table visits
+CREATE TABLE visits (
+	animal_id INT NOT NULL,
+	vet_id INT NOT NULL,
+	FOREIGN KEY (animal_id) REFERENCES animals (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+	FOREIGN KEY (vet_id) REFERENCES vets (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+	PRIMARY KEY (animal_id, vet_id)
+);
