@@ -195,6 +195,15 @@ ON specializations.species_id = species.id
 GROUP BY vets.name
 
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+SELECT animals.name, visits.date_of_visit
+FROM animals
+INNER JOIN visits
+ON visits.animal_id = animals.id
+INNER JOIN vets
+ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez'
+AND visits.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30'
+
 -- What animal has the most visits to vets?
 -- Who was Maisy Smith's first visit?
 -- Details for most recent visit: animal information, vet information, and date of visit.
